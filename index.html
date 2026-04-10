@@ -1,5 +1,4 @@
-<!DOCTYPE html>  
-<html lang="en">  
+<!DOCTYPE html>  <html lang="en">  
 <head>  
   <meta charset="UTF-8" />  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
@@ -11,7 +10,7 @@
   <link rel="stylesheet" href="style.css" />    
   
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323121560865663" crossorigin="anonymous"></script>    
-
+  
   </head>  
 
 <body>  
@@ -52,7 +51,7 @@
     </div>  
   </header>    
 
-  <div class="ad-slot ad-slot--top" style="text-align: center; margin: 10px 0;">  
+  <div class="ad-slot ad-slot--top">  
     <script>  
       atOptions = {  
         'key' : 'd41de0a2ae2524bc1205ecbba0531cce',  
@@ -67,67 +66,211 @@
 
   <main class="app-container">  
     <div class="app-grid">  
-      <div class="form-panel" id="form-panel">  
-        <form id="resume-form" autocomplete="off">  
-          <section class="card" id="section-personal">
-            <div class="card__header"><span class="card__number">1</span><h2 class="card__title">Personal Details</h2></div>
-            <div class="card__body">
-                <div class="form-row form-row--2">
-                    <div class="form-group"><label>Applicant's Name <span class="req">*</span></label><input type="text" id="applicantName" required /></div>
-                    <div class="form-group"><label>Father's Name <span class="req">*</span></label><input type="text" id="fatherName" required /></div>
-                </div>
-                <div class="form-row form-row--2">
-                    <div class="form-group"><label>Mobile Number <span class="req">*</span></label><input type="tel" id="mobile" required /></div>
-                    <div class="form-group"><label>Email Address <span class="req">*</span></label><input type="email" id="email" required /></div>
-                </div>
-                <div class="form-row form-row--2">
-                    <div class="form-group"><label>Date of Birth</label><input type="date" id="dob" required /></div>
-                    <div class="form-group"><label>Gender</label><select id="gender" required><option value="Male">Male</option><option value="Female">Female</option></select></div>
-                </div>
-                <div class="form-group"><label>Address</label><input type="text" id="address" required /></div>
-                <div class="form-group"><label>Career Objective</label><textarea id="objective" rows="3">To work with an organization where I can learn new skills...</textarea></div>
-            </div>
-          </section>
+    <div class="form-panel" id="form-panel">  
+    <form id="resume-form" autocomplete="off">  
 
-          <section class="card" id="section-education">  
-            <div class="card__header"><span class="card__number">2</span><h2 class="card__title">Educational Qualifications</h2></div>  
-            <div class="card__body">  
-              <div id="education-list"></div>  
-              <button type="button" class="btn btn--add" onclick="addEducation()">+ Add Education</button>  
+      <section class="card" id="section-personal">  
+        <div class="card__header">  
+          <span class="card__number">1</span>  
+          <h2 class="card__title">Personal Details</h2>  
+        </div>  
+        <div class="card__body">  
+          <div class="form-row form-row--2">  
+            <div class="form-group">  
+              <label for="applicantName">Applicant's Name <span class="req">*</span></label>  
+              <input type="text" id="applicantName" placeholder="" required />  
             </div>  
-          </section>  
-
-          <section class="card" id="section-final">  
-            <div class="card__header"><span class="card__number">4</span><h2 class="card__title">Final Steps</h2></div>  
-            <div class="card__body">  
-              <div class="form-row form-row--2">  
-                <div class="form-group"><label>Place</label><input type="text" id="declarationPlace" /></div>  
-                <div class="form-group"><label>Photo (100KB)</label><input type="file" id="photoUpload" accept="image/*" /></div>  
-              </div>  
+            <div class="form-group">  
+              <label for="fatherName">Father's Name <span class="req">*</span></label>  
+              <input type="text" id="fatherName" placeholder="" required />  
             </div>  
-          </section>
-        </form>  
+          </div>  
 
-        <div class="generate-bar">  
-          <button class="btn btn--generate" onclick="downloadPDF()">Generate My Resume</button>  
+          <div class="form-row form-row--2">  
+            <div class="form-group">  
+              <label for="motherName">Mother's Name <span class="req">*</span></label>  
+              <input type="text" id="motherName" placeholder="" />  
+            </div>  
+            <div class="form-group">  
+              <label for="mobile">Mobile Number <span class="req">*</span></label>  
+              <input type="tel" id="mobile" placeholder="" required pattern="[0-9]{10}" />  
+            </div>  
+          </div>  
+
+          <div class="form-row form-row--2">  
+            <div class="form-group">  
+              <label for="email">Email Address <span class="req">*</span></label>  
+              <input type="email" id="email" placeholder="" required />  
+            </div>  
+            <div class="form-group">  
+              <label for="dob">Date of Birth <span class="req">*</span></label>  
+              <input type="date" id="dob" required />  
+            </div>  
+          </div>  
+
+          <div class="form-row form-row--2">  
+            <div class="form-group">  
+              <label for="gender">Gender <span class="req">*</span></label>  
+              <select id="gender" required>  
+                <option value="">-- Select Gender --</option>  
+                <option value="Male">Male</option>  
+                <option value="Female">Female</option>  
+                <option value="Other">Other</option>  
+              </select>  
+            </div>  
+            <div class="form-group">  
+              <label for="languages">Known Languages <span class="req">*</span></label>  
+              <input type="text" id="languages" placeholder="e.g., Assamese, English, Hindi" />  
+            </div>  
+          </div>  
+
+          <div class="form-row form-row--1">  
+            <div class="form-group">  
+              <label for="address">Address <span class="req">*</span></label>  
+              <input type="text" id="address" placeholder="e.g., Pan Bazaar, Guwahati, Assam 781001" required />  
+            </div>  
+          </div>  
+
+          <div class="form-row form-row--2">  
+            <div class="form-group">  
+              <label for="category">Category</label>  
+              <select id="category">  
+                <option value="">-- Select Category --</option>  
+                <option value="General">General</option>  
+                <option value="OBC">OBC</option>  
+                <option value="SC">SC</option>  
+                <option value="ST">ST</option>  
+                <option value="EWS">EWS</option>  
+              </select>  
+            </div>  
+            <div class="form-group">  
+              <label for="maritalStatus">Marital Status</label>  
+              <select id="maritalStatus">  
+                <option value="">-- Marital Status --</option>  
+                <option value="Single">Single</option>  
+                <option value="Married">Married</option>  
+                <option value="Divorced">Divorced</option>  
+                <option value="Widowed">Widowed</option>  
+              </select>  
+            </div>  
+          </div>  
+
+          <div class="form-row form-row--1">  
+            <div class="form-group">  
+              <label for="experience">Experience</label>  
+              <input type="text" id="experience" placeholder="e.g., 7 years in XYZ Company" />  
+            </div>  
+          </div>  
+
+          <div class="form-row form-row--1">  
+            <div class="form-group">  
+              <label for="objective">Career Objective</label>  
+              <textarea id="objective" rows="3" placeholder="e.g., To work with an organization where I can learn new skills...">To work with an organization where I can learn new skills and increase my abilities for the organizational goals as well as myself.</textarea>  
+            </div>  
+          </div>  
+        </div>  
+      </section>  
+
+      <section class="card" id="section-education">  
+        <div class="card__header">  
+          <span class="card__number">2</span>  
+          <h2 class="card__title">Educational Qualifications</h2>  
+        </div>  
+        <div class="card__body">  
+          <div class="edu-table-header">  
+            <span class="edu-col edu-col--name">Exam Name <span class="req">*</span></span>  
+            <span class="edu-col edu-col--board">Board/University <span class="req">*</span></span>  
+            <span class="edu-col edu-col--year">Passing Year <span class="req">*</span></span>  
+            <span class="edu-col edu-col--pct">Percentage <span class="req">*</span></span>  
+            <span class="edu-col edu-col--div">Division <span class="req">*</span></span>  
+          </div>  
+          <div id="education-list"></div>  
+          <button type="button" class="btn btn--add" onclick="addEducation()">+ Add More Education</button>  
+        </div>  
+      </section>  
+
+      <section class="card" id="section-other">  
+        <div class="card__header">  
+          <span class="card__number">3</span>  
+          <h2 class="card__title">Other Qualifications</h2>  
+        </div>  
+        <div class="card__body">  
+          <div class="other-table-header">  
+            <span class="other-col other-col--name">Qualification Name</span>  
+            <span class="other-col other-col--inst">Institute/Organization</span>  
+            <span class="other-col other-col--year">Passing Year</span>  
+            <span class="other-col other-col--score">Score/Grade</span>  
+            <span class="other-col other-col--dur">Duration</span>  
+          </div>  
+          <div id="other-list"></div>  
+          <button type="button" class="btn btn--add" onclick="addOther()">+ Add More</button>  
+        </div>  
+      </section>  
+
+      <section class="card" id="section-final">  
+        <div class="card__header">  
+          <span class="card__number">4</span>  
+          <h2 class="card__title">Final Steps</h2>  
+        </div>  
+        <div class="card__body">  
+          <div class="form-row form-row--2">  
+            <div class="form-group">  
+              <label for="declarationPlace">Place (For Declaration)</label>  
+              <input type="text" id="declarationPlace" placeholder="Leave blank to write by hand" />  
+            </div>  
+            <div class="form-group">  
+              <label for="photoUpload">Passport Size Photo (100KB) <span class="req">*</span></label>  
+              <input type="file" id="photoUpload" accept="image/*" />  
+            </div>  
+          </div>  
+
+          <h3 class="sub-heading" style="margin-top:28px;">Declaration</h3>  
+          <div class="declaration-box">  
+            I Hereby declare that the above particulars of facts and information stated are true, correct and complete to the best of my belief and knowledge.  
+          </div>  
+        </div>  
+      </section>  
+
+    </form>  
+
+    <div class="generate-bar">  
+      <button class="btn btn--generate" onclick="downloadPDF()">  
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>  
+        Generate My Resume  
+      </button>  
+    </div>  
+  </div>  
+
+  <div class="preview-panel" id="preview-panel">  
+    <div class="preview-panel__header">  
+      <h2>👁️ Live Preview</h2>  
+      <div class="zoom-controls">  
+        <button type="button" class="btn-icon" onclick="zoomOut()" title="Zoom Out">−</button>  
+        <span id="zoom-level">100%</span>  
+        <button type="button" class="btn-icon" onclick="zoomIn()" title="Zoom In">+</button>  
+        <button type="button" class="btn-icon" onclick="zoomFit()" title="Fit">⊡</button>  
+      </div>  
+    </div>  
+    <div class="preview-scroll" id="preview-scroll">  
+      <div class="resume-page" id="resume-page">  
+        <div class="resume-border">  
+          <div class="resume-content" id="resume-content">  
+            </div>  
         </div>  
       </div>  
+    </div>  
+  </div>  
 
-      <div class="preview-panel" id="preview-panel">  
-        <div class="preview-panel__header"><h2>👁️ Live Preview</h2></div>  
-        <div class="preview-scroll" id="preview-scroll">  
-          <div class="resume-page" id="resume-page"><div class="resume-border"><div class="resume-content" id="resume-content"></div></div></div>  
-        </div>  
-      </div>  
-    </div>
+</div>
+
   </main>    
-
+  
   <div style="display: flex; justify-content: center; margin: 20px 0;">  
     <script async="async" data-cfasync="false" src="https://pl29085824.profitablecpmratenetwork.com/08f76d0d0b95655e02767065d0897c43/invoke.js"></script>  
     <div id="container-08f76d0d0b95655e02767065d0897c43"></div>  
   </div>    
 
-  <div class="ad-slot ad-slot--bottom" style="text-align: center; margin: 20px 0;">  
+  <div class="ad-slot ad-slot--bottom">  
     <script>  
       atOptions = {  
         'key' : '4aa732cfce15f5aa37be7e0b097c7fac',  
@@ -141,11 +284,20 @@
   </div>    
 
   <footer class="footer">  
-    <p>© 2026 <strong>Roy Computer Hub</strong> — All Rights Reserved.</p>  
+    <p>© 2026 <strong>Roy Computer Hub</strong> — Smart Resume Builder. All Rights Reserved.</p>  
+    <div class="footer__links">  
+      <a href="about.html">About Us</a> |   
+      <a href="contact.html">Contact Us</a> |   
+      <a href="privacy.html">Privacy Policy</a> |   
+      <a href="terms.html">Terms & Conditions</a>  
+    </div>  
   </footer>    
 
   <div id="resume-output" class="print-only-container"></div>    
-  <button class="fab-preview" id="fab-preview" onclick="toggleMobilePreview()">👁️</button>    
+  <button class="fab-preview" id="fab-preview" onclick="toggleMobilePreview()" title="Toggle Preview">  
+    👁️  
+  </button>    
   <script src="app.js"></script>  
 </body>  
-</html>
+            </html>
+            
